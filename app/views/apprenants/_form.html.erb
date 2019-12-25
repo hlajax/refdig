@@ -1,0 +1,87 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6">
+<%= form_with(model: apprenant, local: true) do |form| %>
+  <% if apprenant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(apprenant.errors.count, "error") %> prohibited this apprenant from being saved:</h2>
+
+      <ul>
+        <% apprenant.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <fieldset>
+    <legend> Identité & coordonnées:</legend>
+    <div class="row">
+      <div class="form-group col-lg-4">
+    <%= form.label :nom %>
+    <%= form.text_field :nom,class:"form-control" %>
+  </div>
+
+  <div class="form-group col-lg-4">
+    <%= form.label :prenoms %>
+    <%= form.text_field :prenoms,class:"form-control" %>
+  </div>
+
+  <div class="form-group col-lg-4">
+    <%= form.label :sexe_id %>
+    <%= form.collection_select :sexe_id, Sexe.all, :id,:libelle, {prompt: "Choix"},class:"form-control" %>
+  </div>
+
+  <div class="form-group col-lg-4">
+    <%= form.label :telephone %>
+    <%= form.text_field :telephone,class:"form-control" %>
+  </div>
+
+  <div class="form-group col-lg-4">
+    <%= form.label :mail %>
+    <%= form.text_field :mail,class:"form-control" %>
+  </div>
+
+  <div class="form-group col-lg-4">
+    <%= form.label :etat_id %>
+    <%= form.collection_select :etat_id, Etat.all, :id,:libelle, {prompt: "Choix"},class:"form-control" %>
+  </div>
+
+
+  </div>
+  </fieldset>
+
+
+
+
+  <div class="field">
+    <%= form.label :formation %>
+    <%= form.text_field :formation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.rich_text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :attentes %>
+    <%= form.rich_text_area :attentes %>
+  </div>
+
+  <div class="field">
+    <%= form.label :projet %>
+    <%= form.rich_text_area :attentes %>
+  </div>
+
+  <div class="field">
+    <%= form.label :photo %>
+    <%= form.file_field :photo %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+</div>
+</div>
+</div>
