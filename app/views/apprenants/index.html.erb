@@ -1,14 +1,17 @@
 <p id="notice"><%= notice %></p>
 <br>
-<div class="container-fluid">
+<div class="container">
   <div class="row">
-    <div class="col-lg-12">
-      <h1>Apprenants</h1><%= link_to 'New Apprenant', new_apprenant_path,class:"btn btn-primary" %>
+    <div class="col-lg-8">
+      <h1>Apprenants</h1>
+    </div>
+    <div class="col-lg-4 text-right">
+      <%= link_to 'New Apprenant', new_apprenant_path,class:"btn btn-primary" %>
     </div>
   </div>
   <div class="row">
     <% @apprenants.each do |apprenant| %>
-    <div class="col-lg-3">
+    <div class="col-lg-4">
             <figure class="snip1094"><img src="<%= apprenant.photo.url %>" alt="sample50"/>
   <h3><%= apprenant.nom %>  <span> <%= apprenant.prenoms %></span></h3>
   <div class="icons">

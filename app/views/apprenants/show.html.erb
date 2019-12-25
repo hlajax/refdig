@@ -1,38 +1,62 @@
 <p id="notice"><%= notice %></p>
-<p>
-  <strong>Nom:</strong>
-  <%= @apprenant.nom %>
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+        <div class="row">
+        <div class="col-lg-12 text-center">
+          <h4><%= @apprenant.telephone %></h4>
+          <p><%= @apprenant.mail %></p>
+        </div>
+       
+        <div class="col-lg-12 text-center">
+          <p><strong>Formation:</strong><%= @apprenant.formation %></p>
+        </div>
 
-<p>
-  <strong>Telephone:</strong>
-  <%= @apprenant.telephone %>
-</p>
+        <div class="col-lg-12 text-center">
+          <p><strong>Projet:</strong><%= @apprenant.projet %></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h4><%= @apprenant.nom %></h4>
+        </div>
+       
+        <div class="col-lg-12 text-center">
+          <%=image_tag @apprenant.photo.url, class:"img-fluid" %>
+        </div>
 
-<p>
-  <strong>Mail:</strong>
-  <%= @apprenant.mail %>
-</p>
+        <div class="col-lg-12 text-center">
+          <h4><%= @apprenant.nom %></h4>
+        </div>
 
-<p>
-  <strong>Formation:</strong>
-  <%= @apprenant.formation %>
-</p>
+      </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="row">
+        <div class="col-lg-12 text-center">
+          <p><strong>Description:</strong><%= @apprenant.description %></p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @apprenant.description %>
-</p>
+        </div>
+       
+        <div class="col-lg-12 text-center">
+          <p><strong>Attentes:</strong><%= @apprenant.attentes %></p>
+        </div>
 
-<p>
-  <strong>Attentes:</strong>
-  <%= @apprenant.attentes %>
-</p>
+        <div class="col-lg-12 text-center">
+          <h4><%= @apprenant.nom %></h4>
+        </div>
 
-<p>
-  <strong>Projet:</strong>
-  <%= @apprenant.projet %>
-</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
 
 <%= link_to 'Edit', edit_apprenant_path(@apprenant) %> |
 <%= link_to 'Back', apprenants_path %>
